@@ -15,9 +15,15 @@ def encrypt(message):
     return cipher
 
 def main():
-    message = input("Enter Your message: ")
-    result = encrypt(message)
-    print("Morse Code:", result)
+    keep_running = True
+    while keep_running:
+        message = input("Enter Your message: ")
+        if message.lower() == "exit":
+            keep_running = False
+            print("Exiting...")
+        else:
+            result = encrypt(message)
+            print("Morse Code:", result)
 
 
 if __name__ == "__main__":
